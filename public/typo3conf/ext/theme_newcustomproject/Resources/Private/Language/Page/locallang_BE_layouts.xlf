@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Page Beck-End Layout translations -->
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+	<file source-language="en" datatype="plaintext" original="EXT:theme_newcustomproject/Resources/Private/Language/Page/locallang_BE_layouts.xlf" date="2019-04-20UTC12:53:470" product-name="t3kit">
+		<header/>
+		<body>
+
+			<trans-unit id="title.custom_start_page" resname="title.custom_start_page">
+				<source>Custom Start Page</source>
+			</trans-unit>
+			<trans-unit id="title.custom_sub_page" resname="title.custom_sub_page">
+				<source>Custom Sub Page</source>
+			</trans-unit>
+
+		</body>
+	</file>
+</xliff>

@@ -1,0 +1,99 @@
+name: Local development environment
+# https://github.com/t3kit/t3kit-starter#quick-start-a-new-project-on-t3kit-base
+
+on: [push, pull_request]
+
+jobs:
+
+  build:
+    name: Check local development environment
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+        php-version: ['8.0']
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - name: Set up PHP v${{ matrix.php-version }}
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: ${{ matrix.php-version }}
+          tools: composer:v2
+
+      - name: Set up Node.js v${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Get composer cache directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
+
+      - name: Install Composer dependencies
+        # env:
+        #   COMPOSER_AUTH: '{"github-oauth": {"github.com": "${{ secrets.COMPOSER_SECRET }}" }}'
+        run: composer install --prefer-dist --no-progress
+
+      - name: Get npm cache directory
+        id: npm-cache
+        run: |
+          echo "::set-output name=dir::$(npm config get cache)"
+
+      - uses: actions/cache@v2
+        with:
+          path: ${{ steps.npm-cache.outputs.dir }}
+          key: ${{ runner.os }}-node-${{ hashFiles('public/typo3conf/ext/**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      - name: Install npm@^8
+        run: npm install -g npm@^8
+
+      - name: Install npm dependencies
+        run: npm ci --ignore-scripts
+
+      - name: Build theme assets
+        run: npm run dev
+
+      - name: Add environment variables
+        run: composer run-script env
+
+      - name: Create nproxy Docker network
+        run: docker network create nproxy
+
+      - name: Run nginx-proxy
+        run: docker run -d -p 80:80 --name=nproxy --network=nproxy -v ~/.certs/server:/nproxy/certs:ro -v /var/run/docker.sock:/tmp/docker.sock:ro -v nproxy_certs:/etc/nginx/certs t3kit/nproxy:2.0.2
+
+      - name: Run all containers
+        run: docker compose up -d
+
+      - name: Show running containers
+        run: docker ps
+
+      - name: Show nproxy logs
+        run: docker logs nproxy
+
+      - name: Wait for db container
+        run: . ./.env && docker run --rm --network=nproxy toschneck/wait-for-it ${COMPOSE_PROJECT_NAME}_db:3306 -t 100
+
+      - name: Import t3kit-starter database
+        run: composer run-script dbup
+
+      - name: curl TYPO3 FE
+        run: '. ./.env && curl -vfsSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/layouts/empty'
+
+      - name: curl TYPO3 BE
+        run: '. ./.env && curl -vfsSLI -H "Host: $VIRTUAL_HOST_1" --url localhost/typo3/'
+
