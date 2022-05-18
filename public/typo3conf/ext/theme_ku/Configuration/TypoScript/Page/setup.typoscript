@@ -1,0 +1,2 @@
+# import Page TypoScript
+@import 'EXT:theme_ku/Configuration/TypoScript/Page/Config/'

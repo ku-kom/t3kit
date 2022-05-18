@@ -58,7 +58,7 @@ languages:
     base: /nb/
     typo3Language: 'no'
     locale: nb_NO.UTF-8
-    iso-639-1: 'nb'
+    iso-639-1: nb
     navigationTitle: Norwegian
     hreflang: nb-NO
     direction: ltr
@@ -121,5 +121,5 @@ solr_path_read: /solr/
 solr_port_read: '%env(SOLR_PORT)%'
 solr_scheme_read: http
 solr_use_write_connection: false
-theme: t3kit
+theme: theme_ku
 websiteTitle: t3kit11

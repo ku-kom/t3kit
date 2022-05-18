@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87533c838da61117410a495ea9ca0b23",
+    "content-hash": "21b182c33ded805ec1ef1220fab90919",
     "packages": [
         {
             "name": "b13/container",
@@ -4971,6 +4971,42 @@
             "time": "2022-03-17T16:37:28+00:00"
         },
         {
+            "name": "typo3-local/theme-ku",
+            "version": "dev-master",
+            "dist": {
+                "type": "path",
+                "url": "public/typo3conf/ext/theme_ku",
+                "reference": "0c937298648f0d4100a87e1fe13ef31d9ce4c58e"
+            },
+            "require": {
+                "t3kit/t3kit": "*"
+            },
+            "type": "typo3-cms-extension",
+            "extra": {
+                "typo3/cms": {
+                    "extension-key": "theme_ku"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "T3k\\ku\\": "Classes/"
+                }
+            },
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "t3kit Community",
+                    "homepage": "https://github.com/t3kit"
+                }
+            ],
+            "description": "Custom project theme for t3kit",
+            "transport-options": {
+                "relative": true
+            }
+        },
+        {
             "name": "typo3-local/theme-newcustomproject",
             "version": "dev-master",
             "dist": {
@@ -7697,14 +7733,15 @@
         }
     ],
     "aliases": [],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "stability-flags": {
         "t3kit/t3kit": 20,
+        "typo3-local/theme-ku": 20,
         "typo3-local/theme-newcustomproject": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
