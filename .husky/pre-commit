@@ -1,5 +1,5 @@
 #!/bin/sh
-. "$(dirname "$0")/_/husky.sh"
+#. "$(dirname "$0")/_/husky.sh"
 
-composer ctest
-npm test
+#ddev composer ctest
+#ddev exec npm test

@@ -32,6 +32,10 @@ return [
             'automaticInstallation' => '0',
             'offlineMode' => '1',
         ],
+        'frontend_editing' => [
+            'contentEditableWrapperTagName' => 'div',
+            'enablePlaceholders' => '1',
+        ],
         'scheduler' => [
             'maxLifetime' => '1440',
             'showSampleTasks' => '1',
