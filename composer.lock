@@ -905,16 +905,16 @@
         },
         {
             "name": "friendsoftypo3/frontend-editing",
-            "version": "3.0.17",
+            "version": "3.0.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfTYPO3/frontend_editing.git",
-                "reference": "17f08cdedc8db145ac49c005e0e43e66b68f06db"
+                "reference": "a0a442aaf575383dcba8e56e182a05df2e43760d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfTYPO3/frontend_editing/zipball/17f08cdedc8db145ac49c005e0e43e66b68f06db",
-                "reference": "17f08cdedc8db145ac49c005e0e43e66b68f06db",
+                "url": "https://api.github.com/repos/FriendsOfTYPO3/frontend_editing/zipball/a0a442aaf575383dcba8e56e182a05df2e43760d",
+                "reference": "a0a442aaf575383dcba8e56e182a05df2e43760d",
                 "shasum": ""
             },
             "require": {
@@ -969,7 +969,7 @@
                 "issues": "https://github.com/FriendsOfTYPO3/frontend_editing/issues",
                 "source": "https://github.com/FriendsOfTYPO3/frontend_editing"
             },
-            "time": "2022-04-11T05:20:35+00:00"
+            "time": "2022-05-25T05:16:05+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
