@@ -1,7 +1,7 @@
 name: Local development environment
 # https://github.com/t3kit/t3kit-starter#quick-start-a-new-project-on-t3kit-base
 
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
 

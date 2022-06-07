@@ -36,6 +36,7 @@
   ],
   "require": {
     "friendsoftypo3/frontend-editing": "^3.0",
+    "platformsh/config-reader": "^2.4",
     "t3kit/t3kit": "dev-master",
     "typo3-local/theme-ku": "dev-master",
     "typo3-local/theme-newcustomproject": "dev-master",

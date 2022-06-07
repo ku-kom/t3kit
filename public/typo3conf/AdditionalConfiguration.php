@@ -124,3 +124,9 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['LOG']['writerConfiguration'][\TYPO3\CMS\Core\Log\LogLevel::ERROR][\TYPO3\CMS\Core\Log\Writer\FileWriter::class]['disabled'] = 0; // phpcs:ignore
         break; //_______________________________________________________________________________________
 }
+// Include the Platform.sh-specific configuration.
+// This file will no-op on its own if not on Platform.sh.
+$platformshFile = __DIR__ . '/PlatformshConfiguration.php';
+if (file_exists($platformshFile)) {
+    require_once($platformshFile);
+}

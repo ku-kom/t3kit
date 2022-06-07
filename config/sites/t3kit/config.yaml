@@ -1,4 +1,4 @@
-base: '%env(VIRTUAL_HOST_1)%'
+base: '%env(PLATFORM_ROUTES_MAIN)%'
 errorHandling:
   -
     errorCode: 404
@@ -55,12 +55,12 @@ languages:
     title: Norwegian
     enabled: true
     languageId: 3
-    base: /nb/
+    base: /no/
     typo3Language: 'no'
-    locale: nb_NO.UTF-8
-    iso-639-1: nb
+    locale: no_NO.UTF-8
+    iso-639-1: 'no'
     navigationTitle: Norwegian
-    hreflang: nb-NO
+    hreflang: no-NO
     direction: ltr
     fallbackType: free
     fallbacks: ''
@@ -110,7 +110,7 @@ routes:
   -
     route: robots.txt
     type: staticText
-    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: https://%env(HTTP_HOST)%/sitemap.xml"
+    content: "User-agent: *\r\n\r\nDisallow: /typo3/\r\nDisallow: /typo3conf/\r\nAllow: /typo3conf/ext/\r\n\r\n# sitemap\r\nSitemap: %env(PLATFORM_ROUTES_MAIN)%/sitemap.xml"
   -
     route: humans.txt
     type: staticText
