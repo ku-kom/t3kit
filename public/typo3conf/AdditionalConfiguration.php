@@ -110,7 +110,7 @@ switch (\TYPO3\CMS\Core\Core\Environment::getContext()) {
         $GLOBALS['TYPO3_CONF_VARS']['FE']['compressionLevel'] = 5;
 
         // SYS
-        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit11 :: Production';
+        $GLOBALS['TYPO3_CONF_VARS']['SYS']['sitename'] = 'TYPO3 :: t3kit11 :: Copenhagen University Demo';
         $GLOBALS['TYPO3_CONF_VARS']['SYS']['devIPmask'] = '';
 
         // Error and exception handling
