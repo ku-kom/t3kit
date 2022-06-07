@@ -122,4 +122,4 @@ solr_port_read: '%env(SOLR_PORT)%'
 solr_scheme_read: http
 solr_use_write_connection: false
 theme: theme_ku
-websiteTitle: t3kit11
+websiteTitle: 'Copenhagen University t3kit Demo'
