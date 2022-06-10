@@ -2,6 +2,7 @@
 /* custom variables */
 /* ============================== */
 :root {
+  --t3-ce-itl-bodytext-color: #252525;
   /* primary color */
   --t3-primary: red;
   --t3-primary-hs: 0, 100%;
@@ -13,4 +14,8 @@
   --t3-secondary-hs: 120, 100%;
   --t3-secondary-l: 25%;
   --t3-secondary-overlay: hsla(var(--t3-secondary-hs) var(--t3-secondary-l) 40%);
+}
+
+body {
+  color: var(--t3-ce-itl-bodytext-color);
 }
