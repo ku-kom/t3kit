@@ -2,9 +2,10 @@
 /* custom variables */
 /* ============================== */
 :root {
-  --t3-ce-itl-bodytext-color: #252525;
+  --ku-body-color: #000;
+  --ku-background-color: red;
   /* primary color */
-  --t3-primary: red;
+  --t3-primary: #2c6694;
   --t3-primary-hs: 0, 100%;
   --t3-primary-l: 50%;
   --t3-primary-overlay: hsla(var(--t3-primary-hs) var(--t3-primary-l) 40%);
@@ -17,5 +18,6 @@
 }
 
 body {
-  color: var(--t3-ce-itl-bodytext-color);
+  color: var(--ku-body-color);
+  background-color: var(--ku-background-color);
 }
